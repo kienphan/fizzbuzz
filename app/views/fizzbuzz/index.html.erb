@@ -1,0 +1,5 @@
+<%
+1.upto(1000) do |each|
+str = (each%3 == 0 ? "fizz" : "") + (each%5 == 0 ? "buzz" : "") + (each%3 != 0 && each%5 != 0 ? each.to_s: "")%>
+<%=str%><br>
+<% end %>
