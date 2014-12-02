@@ -4,7 +4,7 @@ class DirectorySearchController < ApplicationController
     @tree = Array.new()
     $hash_brand_type = Hash.new("|     ")
     $hash_brand_type[""] = ""
-    $hash_brand_type["`"] = "     "
+    $hash_brand_type["└"] = "     "
   	export_directory_tree(Pathname.new(""),"", "", "", Pathname.new("/etc"))
   end
 
