@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -30,14 +30,22 @@ group :production do
 	gem 'pg', '0.17.1'
 end
 
+#gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+#gem 'capistrano' , '~> 2'
+#gem 'capistrano-rails', group: :development
+group :development do
+	gem 'capistrano'
+	gem 'capistrano-rails'
+	gem 'capistrano-rbenv', '~> 2.0', require: false
+end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
