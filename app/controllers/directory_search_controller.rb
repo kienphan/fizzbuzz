@@ -6,6 +6,7 @@ class DirectorySearchController < ApplicationController
     $hash_brand_type[""] = ""
     $hash_brand_type["└"] = "     "
   	export_directory_tree(Pathname.new(""),"", "", "", Pathname.new("/etc"))
+    return @tree
   end
 
   def export_directory_tree(path, brand_absolute, brand_relative, brand_type, file)

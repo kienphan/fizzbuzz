@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'fizzbuzz/index', :to => 'fizzbuzz#index', :as => :fizzbuzz_basic
 
-  get 'fizzbuzz/extend', :to => 'fizzbuzz#extend', :as => :fizzbuzz_extend
+  get 'fizzbuzz/extends', :to => 'fizzbuzz#extends', :as => :fizzbuzz_extend
 
 
   # The priority is based upon order of creation: first created -> highest priority.

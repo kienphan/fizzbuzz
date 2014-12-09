@@ -1,7 +1,0 @@
-<% 1.upto(1000) do |each|
-if each%3 == 0 && each%5 !=0 %><%=image_tag "scream_boy.png",size: '45x45'%><br>
-<% elsif each%5 == 0 && each%3 !=0%><%=image_tag "kute_dog.png", size: '45x45'%><br>
-<% elsif each%15 ==0%><%=image_tag "scream_boy.png",size: '45x45'%><%=image_tag "kute_dog.png",size: '45x45'%><br>
-<% else %><%=each.to_s%><br>
-<% end %>
-<% end %>

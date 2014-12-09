@@ -24,12 +24,13 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+# gem 'spring',        group: :development
 
 group :production do
 	gem 'pg', '0.17.1'
 end
 
+# gem to fix assert pipeline when deploy heroku
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
@@ -44,9 +45,12 @@ gem 'unicorn'
 group :development do
 	gem 'capistrano'
 	gem 'capistrano-rails'
-	gem 'capistrano-rbenv', '~> 2.0', require: false
 end
 
+# unit test
+group :development, :test do
+    gem 'rspec-rails', '~> 3.0'
+end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
