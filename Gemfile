@@ -39,12 +39,17 @@ gem 'rails_12factor', group: :production
 # Use unicorn as the app server
 gem 'unicorn'
 
+gem 'whenever', require: false 
+
 # Use Capistrano for deployment
 #gem 'capistrano' , '~> 2'
 #gem 'capistrano-rails', group: :development
-group :development do
-	gem 'capistrano'
+group :deployment do
+	gem 'capistrano', '~> 3.2.1'
+	gem 'capistrano-rbenv'
+	gem 'capistrano-bundler'
 	gem 'capistrano-rails'
+	gem 'capistrano3-unicorn'
 end
 
 # unit test

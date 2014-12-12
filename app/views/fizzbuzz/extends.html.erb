@@ -1,5 +1,13 @@
 <div>
-<% @fizzbuzz.each{|element| %>
-<%= raw element %><br>
-<% } %>
+<% @_fizzbuzz_2.each { |element|
+  if element == "fizz" %>
+    <%= image_tag "scream_boy.png",size: '45x45' %><br>
+  <% elsif element == "buzz" %>
+    <%= image_tag "kute_dog.png", size: '45x45'%><br>
+  <% elsif element == "fizzbuzz" %>
+    <%= image_tag "scream_boy.png", size: '45x45' %><%= image_tag "kute_dog.png", size: '45x45' %><br>
+  <% else %>
+    <%= element %><br>
+  <% end 
+} %>
 </div>
