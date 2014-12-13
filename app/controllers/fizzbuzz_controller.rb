@@ -3,15 +3,12 @@ class FizzbuzzController < ApplicationController
   def index
     @_fizzbuzz_1 = Array.new
   	1.upto(1000) do |i|
-      if i % 3 == 0 && i % 5 != 0
-        @_fizzbuzz_1 << "fizz"
-      elsif i % 3 != 0 && i % 5 == 0
-        @_fizzbuzz_1 << "buzz"
-      elsif i % 15 == 0 
-        @_fizzbuzz_1 << "fizzbuzz"
-      else
-        @_fizzbuzz_1 << i.to_s
-      end
+      @_fizzbuzz_1 << 
+        if i % 3 == 0
+          i % 5 == 0 ? "fizzbuzz" : "fizz"
+        else
+          i % 5 == 0 ? "buzz" : "#{i}"
+        end
     end
     return @_fizzbuzz_1
   end
@@ -19,14 +16,15 @@ class FizzbuzzController < ApplicationController
   def extends
     @_fizzbuzz_2 = Array.new
   	1.upto(1000) do |i|
-      if i % 3 == 0 && i % 5 != 0 || ( i.to_s.include? "3" )
+      if i.to_s.include? "3"
         @_fizzbuzz_2 << "fizz"
-      elsif i % 3 != 0 && i % 5 == 0 && ( !i.to_s.include? "3" )
-        @_fizzbuzz_2 << "buzz"
-      elsif i % 15 == 0 && ( !i.to_s.include? "3" )
-        @_fizzbuzz_2 << "fizzbuzz"
-      else
-        @_fizzbuzz_2 << i.to_s
+      else 
+        @_fizzbuzz_2 << 
+          if i % 3 == 0
+            i % 5 == 0 ? "fizzbuzz" : "fizz"
+          else
+            i % 5 == 0 ? "buzz" : "#{i}"
+          end
       end
     end
     return @_fizzbuzz_2
