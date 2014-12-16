@@ -102,8 +102,9 @@ RSpec.describe FizzbuzzController, :type => :controller do
       expect(@fizzbuzz[150 - 1]).not_to eq 'buzz'
 
       # is multiples of 5 and includes 3
-      expect(@fizzbuzz[35 - 1]).to eq 'buzz'
-      expect(@fizzbuzz[325 - 1]).to eq 'buzz'
+      expect(@fizzbuzz[35 - 1]).not_to eq 'buzz'
+      expect(@fizzbuzz[325 - 1]).not_to eq 'buzz'
+
     end
 
     it "check if element is FizzBuzz" do
@@ -118,6 +119,10 @@ RSpec.describe FizzbuzzController, :type => :controller do
       # is multiples of 3 and 5 and include 3
       expect(@fizzbuzz[135 - 1]).to eq 'fizzbuzz'
       expect(@fizzbuzz[300 - 1]).to eq 'fizzbuzz'
+
+      # is multiples of 5 and includes 3
+      expect(@fizzbuzz[35 - 1]).to eq 'fizzbuzz'
+      expect(@fizzbuzz[325 - 1]).to eq 'fizzbuzz'
     end
 
     it "check if element is number" do

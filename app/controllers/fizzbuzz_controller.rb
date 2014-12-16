@@ -16,12 +16,23 @@ class FizzbuzzController < ApplicationController
   def extends
     @_fizzbuzz_2 = Array.new
     1.upto(1000) do |i|
-      @_fizzbuzz_2 << 
-        if i % 5 == 0
-          i % 3 == 0 ? "fizzbuzz" : "buzz"
+      if i % 5 == 0
+        if i % 3 == 0
+          @_fizzbuzz_2 << "fizzbuzz"
         else
-          i % 3 == 0 || ( i.to_s.include? "3" ) ? "fizz" : "#{i}"
+          if ( i.to_s.include? "3" )
+            @_fizzbuzz_2 << "fizzbuzz"
+          else
+            @_fizzbuzz_2 << "buzz"
+          end
         end
+      else
+        if i % 3 == 0 || ( i.to_s.include? "3" )
+          @_fizzbuzz_2 << "fizz"
+        else
+          @_fizzbuzz_2 << "#{i}"
+        end
+      end
     end
     return @_fizzbuzz_2
   end
