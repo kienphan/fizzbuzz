@@ -6,7 +6,8 @@ RSpec.describe FizzbuzzController, :type => :controller do
 
     before do
       @controller = FizzbuzzController.new
-      @fizzbuzz = @controller.index
+      @controller.index
+      @fizzbuzz = @controller.instance_variable_get(:@_fizzbuzz_1)
     end
 
     it "returns http success" do
@@ -66,7 +67,8 @@ RSpec.describe FizzbuzzController, :type => :controller do
     
     before do
       @controller = FizzbuzzController.new
-      @fizzbuzz = @controller.extends
+      @controller.extends
+      @fizzbuzz = @controller.instance_variable_get(:@_fizzbuzz_2)
     end
 
     it "returns http success" do

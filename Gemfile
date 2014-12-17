@@ -42,13 +42,12 @@ gem 'unicorn'
 gem 'whenever', require: false 
 
 # Use Capistrano for deployment
-#gem 'capistrano' , '~> 2'
 #gem 'capistrano-rails', group: :development
 group :deployment do
-	gem 'capistrano', '~> 3.2.1'
+	gem 'capistrano', '~> 3.3.0'
+	gem 'capistrano-rails'
 	gem 'capistrano-rbenv'
 	gem 'capistrano-bundler'
-	gem 'capistrano-rails'
 	gem 'capistrano3-unicorn'
 end
 
