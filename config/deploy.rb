@@ -28,6 +28,8 @@ set :pty, true
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/assets')
 
+set :unicorn_pid, "#{shared_path}/tmp/pids/unicorn.pid"
+
 # Default value for default_env is {}
 set :default_env, { path: "~/.rbenv/bin:$PATH" }
 
