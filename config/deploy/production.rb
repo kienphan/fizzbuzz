@@ -17,7 +17,6 @@ role :db,  %w{ubuntu@54.172.66.153}
 
 server '54.172.66.153', user: 'ubuntu', roles: %w{web app}, my_property: :my_value
 
-
 # Custom SSH Options
 # ==================
 # You may pass any option but keep in mind that net/ssh understands a
